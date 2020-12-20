@@ -1,0 +1,18 @@
+.waiting-room {
+    width: 90%;
+    height: calc(100vh - 4rem);
+    margin: 6rem auto;
+    // background: #ffffff;
+    display: grid;
+    grid-template-columns: 10% auto auto;
+    grid-gap: 5%;
+    
+    h1 {
+        color: white;
+        font-weight: 700;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+
+}

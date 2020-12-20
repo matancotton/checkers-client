@@ -1,0 +1,16 @@
+@import './base/varibles.scss';
+@import './base/general.scss';
+@import './components/main/header';
+@import './components/home/homePage';
+@import './components/login/login-form';
+@import './components/login/login';
+@import './components/profile/profile';
+@import './components/rooms/waitingRoom';
+@import './components/rooms/availableUsers';
+@import './components/rooms/userField';
+@import './components/messages/invitation';
+@import './components/messages/inbox';
+@import './components/checkersGame/gameBoard';
+@import './components/messages/rescivedMessage';
+@import './components/checkersGame/gamePiece';
+@import './components/rooms/gameInfoBox';

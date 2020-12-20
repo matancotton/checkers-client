@@ -1,0 +1,47 @@
+%piece {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 3px solid $mainBlue;
+    opacity: 0.7;
+    transition: opacity 200ms;
+}
+
+.white-piece {
+    @extend %piece;
+    background: white;
+}
+
+.white-king {
+    @extend %piece;
+    background: center/cover;
+    background-image: linear-gradient(rgba(253, 253, 253, 0.5), rgba(255, 255, 255, 0.5)), 
+     url(https://spng.subpng.com/20190802/yls/kisspng-chess-piece-purling-london-ltd-game-backgammon-5d4503a59dbcb7.5543743715648040056461.jpg);
+}
+
+.black-piece {
+    @extend %piece;
+    background: #333333;
+    
+}
+
+.black-king {
+    @extend %piece;
+    background: center/cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+     url(https://spng.subpng.com/20190802/yls/kisspng-chess-piece-purling-london-ltd-game-backgammon-5d4503a59dbcb7.5543743715648040056461.jpg);
+}
+
+.my-piece {
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+.active-piece {
+    opacity: 1;
+    cursor: pointer;
+}

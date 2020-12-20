@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1rem;
+    margin: 0;
+    background: #333744;
+}
+
+a {
+    border: none;
+}
+
+%a-nav {
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+}
+
+%button {
+    height: 2rem;
+    width: 5rem;
+    background: $mainBlue;
+    color: #ffffff;
+    border: none;
+    outline: none;
+
+    &:hover {
+        background: $lightBlue;
+        color: #1c08cf;
+        cursor: pointer;
+    }
+
+    &:disabled {
+        background: #cccc;
+        cursor: not-allowed;
+        color: $lightBlue;
+    }
+}

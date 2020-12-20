@@ -1,0 +1,64 @@
+.invitation-container {
+    display: inline-block;
+    position: absolute;
+    top: -0.5rem;
+    
+    margin-left: 1.2rem;
+    min-width: 15rem;
+    min-height: 5rem;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    cursor: default;
+
+    &:after {
+    content: '';
+	position: absolute;
+	left: 2px;
+	top: 20px;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #ffffff;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+    }
+
+    .invitation__message {
+        margin: 0;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "header header header"
+                            "invite . cancel";
+                            
+        h3 {
+            margin: 0;
+            padding: 0;
+            grid-area: header;
+            color: #1d0606;
+            text-align: center;
+
+        }
+
+        .invite {
+            display: block;
+            @extend %button;
+            grid-area: invite;
+            border-radius: 3px;
+        }
+
+        .cancel {
+            display: block;
+            @extend %button;
+            grid-area: cancel;
+            border-radius: 3px;
+        }
+        
+    }
+}

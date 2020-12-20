@@ -1,0 +1,19 @@
+.rescived-message-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+
+    .message {
+        font-weight: 700;
+        color: #62899b;
+    }
+
+    .buttons {
+        button {
+            @extend %button;
+            width: 3rem;
+            margin-left: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.user-field {
+    padding: 0.5rem 0;
+    color: #ffffff;
+    position: relative;
+
+    &:hover {
+        color: #d17878;
+        cursor: pointer;
+    }
+    %dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+    .online {
+        @extend %dot;
+        background: #18e429;
+    }
+    .offline {
+        @extend %dot;
+        background: #837272;
+    }
+}

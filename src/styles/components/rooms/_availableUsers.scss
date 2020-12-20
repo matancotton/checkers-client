@@ -1,0 +1,11 @@
+.available-users {
+    z-index: 10;
+    h3 {
+        color: #cccccc;
+    }
+
+    .available-users__users {
+        display: flex;
+        flex-direction: column;
+    }
+}

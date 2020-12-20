@@ -1,0 +1,57 @@
+.inbox-container {
+    position: fixed;
+    background: #ffffff;
+    color: #333333;
+    width: 25rem;
+    height: 10rem;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $mainBlue;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    // transform: translateX(0%);
+    animation: slidein 300ms forwards ease-out;
+
+    .close-inbox {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: #522d2d;
+        font-weight: 700;
+        font-size: 1.5rem;
+
+        &:hover {
+            cursor: pointer;
+            color: $mainBlue;
+        }
+    }
+
+    .title {
+        font-size: 1.2rem;
+
+    }
+
+    .messages {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        width: 100%;
+    }
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(100%);
+      }
+    
+      to {
+        transform: translateX(0%);
+      }
+}
