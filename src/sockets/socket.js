@@ -3,11 +3,11 @@ import { addMessageAction } from '../actions/messagesAction';
 import { setPlayersAction } from '../actions/playersAction';
 import {nanoid} from 'nanoid';
 import { setBoardAction } from '../actions/gameBoardAction';
-const ENDPOINT = 'https://cotton-checkers-server.herokuapp.com/';
 let socket = null
-
+const SERVER_URL = 'https://cotton-checkers-server.herokuapp.com'
+// const SERVER_URL = 'http://localhost:4000'
 export const connectSocket = (username)=>{
-    socket = io(ENDPOINT,{withCredentials: true,extraHeaders: {
+    socket = io(SERVER_URL,{withCredentials: true,extraHeaders: {
         username
         }})
 }

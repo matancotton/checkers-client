@@ -18,3 +18,11 @@
     }
 
 }
+
+@media (max-width:40rem) {
+    .home-page {
+        &>div {
+            width: 80vw;
+        }
+    }
+}

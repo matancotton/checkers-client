@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "checkers-app-27e55",
+    "default": "checkers-app-27e55"
+  }
+}

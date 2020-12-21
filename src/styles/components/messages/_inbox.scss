@@ -55,3 +55,11 @@
         transform: translateX(0%);
       }
 }
+
+@media (max-width: 40rem) {
+    .inbox-container {
+        width: 100vw;
+        bottom: 2rem;
+        right: 0;
+    }
+}

@@ -39,3 +39,12 @@
     }
     
 }
+
+@media (max-width: 40rem) {
+    .header {
+        .header__nav {
+            width: 100%;
+        }
+    }
+    
+}

@@ -1,5 +1,6 @@
 import Axios from 'axios';
-const SERVER_URL = 'https://cotton-checkers-server.herokuapp.com/';
+const SERVER_URL = 'https://cotton-checkers-server.herokuapp.com'
+// const SERVER_URL = 'http://localhost:4000'
 
 export const getPlayersFromDB = async(id,token)=>{
     try {

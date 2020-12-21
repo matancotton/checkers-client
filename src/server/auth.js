@@ -1,5 +1,6 @@
 import Axios from 'axios';
 const SERVER_URL = 'https://cotton-checkers-server.herokuapp.com'
+// const SERVER_URL = 'http://localhost:4000'
 export const subscribeToDB = async (user)=>{
     try {
         const result = await Axios.post(`${SERVER_URL}/users/add`,{...user})

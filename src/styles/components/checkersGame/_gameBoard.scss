@@ -39,3 +39,10 @@
     }
 
 }
+
+@media (max-width: 40rem) {
+    .board-container {
+        width: 70vw;
+        height: 70vw;
+    }
+}

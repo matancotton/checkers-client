@@ -16,3 +16,12 @@
     
 
 }
+
+@media (max-width: 40rem) {
+    .waiting-room {
+        width: 100vw;
+        grid-template-columns: 20% auto;
+        grid-template-rows: 100vw auto;
+        grid-gap: 2%;
+    }
+}
