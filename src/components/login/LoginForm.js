@@ -4,6 +4,7 @@ import { loginAction } from '../../actions/loginAction';
 import { saveUserOnCookie } from '../../cookies/cookies';
 import { loginToSite } from '../../server/auth';
 import { LoginContext } from '../context/LoginContext';
+import Loader from '../loaders/Loader';
 
 const LoginForm = (props)=>{
     const [username, setUsername] = useState("")
@@ -12,6 +13,7 @@ const LoginForm = (props)=>{
     const [isPasswordValid, setIsPasswordValid] = useState(true)
     const {userDispatch} = useContext(LoginContext);
     const [errorMessage, setErrorMessage] = useState("")
+    const [isUserLoading,setIsUserLoading] = useState(false)
     const history = useHistory()
     const changeForm = ()=>{
         history.push('/sign-up')
@@ -47,6 +49,7 @@ const LoginForm = (props)=>{
 
     const onSubmitForm = (event)=>{
         event.preventDefault()
+        setIsUserLoading(true)
         loginToSite(username,password).then(
             (userData)=>{
                 userDispatch(loginAction(userData))
@@ -55,6 +58,7 @@ const LoginForm = (props)=>{
             },
             (err)=>{
                 setErrorMessage(err.message)
+                setIsUserLoading(false)
             }
         )
         
@@ -77,6 +81,7 @@ const LoginForm = (props)=>{
                 <button type="submit" disabled={isFormInValid()}>Submit</button>
                 <div className="change-form" onClick={changeForm}>Sign up</div>
             </form>
+            {isUserLoading && <Loader />}
         </div>
     )
 }

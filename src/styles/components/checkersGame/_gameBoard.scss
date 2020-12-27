@@ -42,7 +42,10 @@
 
 @media (max-width: 40rem) {
     .board-container {
-        width: 70vw;
-        height: 70vw;
+        width: 100vw;
+        height: 100vw;
+        margin-top: 0;
+        grid-row: 2;
+        grid-column: span 2;
     }
 }

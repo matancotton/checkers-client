@@ -1,3 +1,4 @@
+import { kingEatingMoves, kingValidMoves } from "./kingLogic"
 import { isAbleToEat, pieceEatMoves, pieceValidMoves } from "./pieceLogic"
 
 export const setBoard = (pieces)=>{
@@ -70,10 +71,18 @@ export const setMustEatPiecesList = (board,isWhite)=>{
 export const isPlayerWon = (board,isWhite)=>{
     for (let row=0;row<8;row++){
         for (let column=0;column<8;column++){
-            if (board.pieces[row][column]!=null)
-                if (board.pieces[row][column].isWhite!==isWhite)
-                    if (pieceEatMoves(board,row,column).length > 0 || pieceValidMoves(board,row,column).length > 0)
+            if (board.pieces[row][column]!=null) {
+                if (board.pieces[row][column].isWhite!==isWhite) {
+                    if (board.pieces[row][column].isKing) {
+                        if (kingEatingMoves(board,row,column).length >0 || kingValidMoves(board,row,column).length >0) {
+                            return false
+                        }
+                    } else {
+                        if (pieceEatMoves(board,row,column).length > 0 || pieceValidMoves(board,row,column).length > 0)
                         return false
+                    }
+                } 
+            }     
         }
     }
     return true

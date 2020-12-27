@@ -1,0 +1,21 @@
+.score-board-container {
+    margin: 6rem auto;
+    width: 70vw;
+    height: calc(100vh - 4rem);
+    text-align: center;
+    color: #cac0c0;
+
+    .score-board__table {
+        margin-top: 2rem;
+        border: 3px solid #966060;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        background: #000000;
+        padding: 1rem;
+        max-height: 80vh;
+        overflow: auto;
+    }
+
+}

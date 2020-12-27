@@ -107,7 +107,6 @@ const GameBoard = (props)=>{
         
         if (eatingMoves.length > 0 && isEating) {
             setSelectedPiece({row,column, isEating: true})
-            console.log(selectedPiece)
             setPieceValidMoves(eatingMoves)
         } else {
             newBoard.isWhite = !newBoard.isWhite

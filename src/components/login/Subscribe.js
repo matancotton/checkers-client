@@ -4,6 +4,7 @@ import validator from 'validator';
 import { loginAction } from '../../actions/loginAction';
 import { subscribeToDB } from '../../server/auth';
 import { LoginContext } from '../context/LoginContext';
+import Loader from '../loaders/Loader';
 
 const Subscribe = (props)=>{
     const {userDispatch} = useContext(LoginContext)
@@ -15,6 +16,7 @@ const Subscribe = (props)=>{
     const [age, setage] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
+    const [isUserLoading,setIsUserLoading] = useState(false)
     const isFormInvalid = () => {
         return validInputs.includes(false);
     };
@@ -124,6 +126,7 @@ const Subscribe = (props)=>{
 
     const onSubmitform = (event) => {
         event.preventDefault();
+        setIsUserLoading(true)
         subscribeToDB({username, password, email, age}).then(
             (userData)=>{
                 if (!userData) {
@@ -133,6 +136,7 @@ const Subscribe = (props)=>{
                 history.push('/home')
             }
         ).catch((err)=>{
+            setIsUserLoading(false)
             if (err.message==='Request failed with status code 400')
                 setInvalidMessages(["user is alredy taken","","","",""])
         })
@@ -170,6 +174,7 @@ const Subscribe = (props)=>{
                 <button type="submit" disabled={isFormInvalid()}>Submit</button>
                 <div className="change-form" onClick={chagneForm}>Login</div>
             </form>
+            {isUserLoading && <Loader />}
         </div>
     )
 }

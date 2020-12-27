@@ -9,3 +9,9 @@
         flex-direction: column;
     }
 }
+
+@media (max-width: 40rem) {
+    .available-users {
+        margin-top: 1rem;
+    }
+}

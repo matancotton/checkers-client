@@ -45,3 +45,9 @@
     opacity: 1;
     cursor: pointer;
 }
+
+@media (max-width: 40rem) {
+    .my-piece {
+        opacity: 1;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { addScoreToDB } from '../../server/db';
 import { addMessage, connectSocket, disconnectSocket, setOnlinePlayers } from '../../sockets/socket';
 import GameBoard from '../checkersGame/GameBoard';
 import GameBoardContextProvider from '../context/GameBoardContext';
@@ -28,6 +29,23 @@ const GameRoom = ()=>{
             setIsFirstLoad(false)
 
         }
+
+        if (!!isWinner) {
+            addScoreToDB(userState.token,100).then(()=>{
+                console.log('socre was added succesfuly')
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        } else if (isWinner === false) {
+            addScoreToDB(userState.token,-50).then(()=>{
+                console.log('socre was added succesfuly')
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }
+
         setOnlinePlayers(playersDispatch,userState.user.username)
         addMessage(messagesDispatch,setIsInboxVisible,setIsDisplayedBoard,setOpponent,setIsWhite)
 
@@ -35,7 +53,7 @@ const GameRoom = ()=>{
             disconnectSocket()
         }
         
-    },[userState])
+    },[userState,isWinner])
     return (
         <div className="waiting-room">
             <Players />

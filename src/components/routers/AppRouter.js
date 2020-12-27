@@ -8,6 +8,7 @@ import Login from '../login/Login';
 import Header from '../main/Header';
 import Profile from '../profile/Profile';
 import GameRoom from '../rooms/GameRoom';
+import Scoreboard from '../scoreBoard/Scoreboard';
 import LoginRoute from './LoginRoute';
 import PrivateRoute from './PrivateRouter';
 
@@ -24,11 +25,13 @@ const AppRouter = ()=>(
                 <LoginRoute path="/login" component={Login} isLoginMode={true}/>
                 <LoginRoute path="/sign-up" component={Login} isLoginMode={false} />
                 <PrivateRoute path="/my-profile" component={Profile} />
+                <PrivateRoute path="/score-board" component={Scoreboard} />
                 <PlayersContextProvider>
                     <MessagesContextProvider>
                         <PrivateRoute path="/game-room" component={GameRoom} />
                     </MessagesContextProvider>
                 </PlayersContextProvider>
+                
                 <Route path="*" component={HomePage}>
                 </Route>
             </Switch>

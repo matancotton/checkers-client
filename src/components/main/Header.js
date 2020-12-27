@@ -17,7 +17,7 @@ const Header = ()=>{
         <div className="header">
             <div className="header__nav">
                 <NavLink to="/home" activeClassName="header__active-link">Home</NavLink>
-                <div>
+                <div className="links">
                     {
                         !!userState.user?
                         <NavLink to="/my-profile" activeClassName="header__active-link">Profile</NavLink>:
@@ -29,6 +29,7 @@ const Header = ()=>{
                         <NavLink to="/login" activeClassName="header__active-link">Login</NavLink>
                     }
                     {!!userState.user && <NavLink to="/game-room" activeClassName="header__active-link">Game room</NavLink>}
+                    {!!userState.user && <NavLink to="/score-board" activeClassName="header__active-link">Score board</NavLink>}
                 </div>
             </div>
         </div>

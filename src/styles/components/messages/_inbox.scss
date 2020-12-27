@@ -61,5 +61,9 @@
         width: 100vw;
         bottom: 2rem;
         right: 0;
+
+        .buttons {
+            display: flex;
+        }
     }
 }
