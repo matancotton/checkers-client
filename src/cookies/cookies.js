@@ -1,10 +1,13 @@
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 
 const USER_DATA = "user-data";
 
 export const saveUserOnCookie = (userData) => {
     const jsonUserData = JSON.stringify(userData);
-    Cookies.set(USER_DATA, jsonUserData, { expires: 1 / 12, sameSite: "strict" });
+    Cookies.set(USER_DATA, jsonUserData, {
+        expires: 1,
+        sameSite: "strict",
+    });
 };
 
 export const deleteUserFromCookie = () => {
